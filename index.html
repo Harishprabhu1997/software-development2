@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <link rel="stylesheet"href="style.css">
+    <link href="https://fontawesome.com/">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create Account</h2>
+        </div>
+            <form class="form" id ="form">
+                <div class ="form-control">
+                <label>Username</label>
+                <input type="text" placeholder="Fronthead Forever"id="Username">
+                <i class="fa-regular fa-check"></i>
+                 </div> 
+                 <div class ="form-control">
+                    <label>Email</label>
+                    <input type="email" placeholder="ff@gmail.com"id="email">
+                    <i class="fa-regular fa-check"></i>
+                     </div> 
+                     <div class ="form-control">
+                        <label>Password</label>
+                        <input type="password" placeholder="confirm password"id="password1">
+                        <i class="fa-regular fa-check"></i>
+                         </div>
+                         <div class ="form-control">
+                            <label>Confirm Password</label>
+                            <input type="Confirm password" placeholder="confirm password"id="password1">
+                            <i class="fa-regular fa-check"></i>
+                             </div>
+                         <button>submit</button>
+
+            </form>
+    </div>
+    <script>
+        const form = document.getElementById("form");
+        const Username = document.getElementById("Username");
+        const Email = document.getElementById("Email");
+        const Password = document.getElementById("Password");
+        const Confirm Password = document.getElementById("Confirm Password");
+
+        form.addEventlistener('submit',e =>{  
+           e.preventDefault();
+           checkInput(); 
+        });
+
+        function checkInput(){
+          const usernameValue = username.value.trim();
+          const emailValue = email.value.trim();
+          const passwordValue = password.value.trim();
+          const Confirmpasswordvalue =  Confirmpassword.value.trim();
+
+          if(usernameValue === ''){
+            setError(username,'Username Cannot Be Blank');
+          }
+          else{
+            SetSuccess(username);
+            if(email === ''){
+                setError(email,'Email Cannot Be Blank');
+          }
+          else if(!isEmail(emailValue))
+          {
+            SetError(email,'Not a valid Email');
+            }
+            {
+                else{
+                    setSuccess(email);
+                }
+            }
+          }
+        }
+    </script>
+</body>
+</html>
